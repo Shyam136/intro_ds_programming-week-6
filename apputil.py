@@ -18,19 +18,28 @@ Notes
 """
 
 from __future__ import annotations
-
-import json
 import os
+import json
 from dataclasses import dataclass
-from typing import Any, Dict, Iterable, List, Optional, Tuple
-
+from typing import Any, Dict, Iterable, List, Optional
 import pandas as pd
 import requests
 
+# -----------------------------
+# Load environment variables safely
+# -----------------------------
+try:
+    from dotenv import load_dotenv
+    load_dotenv()  # loads variables from .env into environment
+except ImportError:
+    # If python-dotenv isn’t installed, skip without error.
+    # You can install it with: pip install python-dotenv
+    pass
 
+# GENIUS_BASE URLs
 GENIUS_BASE = "https://api.genius.com"
 SEARCH_ENDPOINT = f"{GENIUS_BASE}/search"
-ARTIST_ENDPOINT = f"{GENIUS_BASE}/artists/{{artist_id}}"  # format with id
+ARTIST_ENDPOINT = f"{GENIUS_BASE}/artists/{{artist_id}}"
 
 
 @dataclass
