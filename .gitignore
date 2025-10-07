@@ -28,6 +28,7 @@ cython_debug/
 
 # project
 .env
+*.env
 .vscode/
 temp.json
 

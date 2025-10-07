@@ -9,7 +9,7 @@ st.title("Genius Artist Lookup (Week 6)")
 token = st.text_input(
     "Genius Access Token (optional if you use local fallback)",
     type="password",
-    value=os.getenv("GENIUS_ACCESS_TOKEN", ""),
+    value=os.getenv("GENIUS_ACCESS_TOKEN", "s1H2Y17CX3TQ8eYLSJjOnpWq8dAmZ18koVCBJuNFJhQ_FGNQRGrF57qi83QNjc83"),
 )
 
 search = st.text_input("Search for an artist", value="Radiohead")
